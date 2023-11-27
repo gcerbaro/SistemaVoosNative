@@ -39,15 +39,18 @@ function ListaVoos({ navigation }) {
                 renderItem={({ item, index }) => {
                     const corItem = CORES[index % CORES.length];
                     const corLetra = LETRAS[index % LETRAS.length];
-                    <TouchableOpacity onPress={() => editarVoo(item)} onLongPress={() => deletarVoo(item, voos, setVoos)}>
-                        <View style={{ ...styles.itemContainer, backgroundColor: corItem, color: corLetra }}>
-                            <Text style={styles.itemTitle}>Origem: {item.origem}</Text>
-                            <Text style={styles.itemTitle}>Destino: {item.destino}</Text>
-                            <Text style={styles.itemDate}>{item.partida}</Text>
-                        </View>
-                    </TouchableOpacity>
+                    return (
+                        <TouchableOpacity onPress={() => editarVoo(item)} onLongPress={() => deletarVoo(item, voos, setVoos)}>
+                            <View style={{ ...styles.itemContainer, backgroundColor: corItem, color: corLetra }}>
+                                <Text style={styles.itemTitle}>Origem: {item.origem}</Text>
+                                <Text style={styles.itemTitle}>Destino: {item.destino}</Text>
+                                <Text style={styles.itemDate}>{item.partida}</Text>
+                            </View>
+                        </TouchableOpacity>
+                    );
                 }}
             />
+
         </View>
     );
 }

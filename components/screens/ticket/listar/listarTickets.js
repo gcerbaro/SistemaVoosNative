@@ -35,15 +35,17 @@ function ListaTicket({ navigation }) {
             <FlatList
                 data={tickets}
                 keyExtractor={item => item.id.toString()}
-                renderItem={({ item }) => {
+                renderItem={({ item, index }) => {
                     const corItem = CORES[index % CORES.length];
                     const corLetra = LETRAS[index % LETRAS.length];
+                    return(
                     <TouchableOpacity onPress={() => editarTicket(item)} onLongPress={() => deletarTicket(item, tickets, setTickets)}>
                         <View style={{ ...styles.itemContainer, backgroundColor: corItem, color: corLetra }}>
                             <Text style={styles.itemTitle}>{item.valor}</Text>
                             <Text style={styles.itemTitle}>{item.assento}</Text>
                         </View>
                     </TouchableOpacity>
+                    );
                 }}
             />
         </View>

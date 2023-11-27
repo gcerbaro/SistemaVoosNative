@@ -35,7 +35,7 @@ function ListaUsuarios({ navigation }) {
             <FlatList
                 data={usuarios}
                 keyExtractor={item => item.id.toString()}
-                renderItem={({ item }) => {
+                renderItem={({ item, index }) => {
                     const corItem = CORES[index % CORES.length];
                     const corLetra = LETRAS[index % LETRAS.length];
                     return (
@@ -46,8 +46,7 @@ function ListaUsuarios({ navigation }) {
                                 <Text style={styles.itemTitle}>{item.email}</Text>
                             </View>
                         </TouchableOpacity>
-                    )
-
+                    );
                 }}
             />
         </View>
