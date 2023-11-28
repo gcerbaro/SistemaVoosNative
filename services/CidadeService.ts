@@ -17,7 +17,7 @@ const BASE_URL = 'http://localhost:8080';
 export const fetchEventos = async (): Promise<Cidade[]> => {
     try {
         const response = await axios.get<ApiResponse>(`${BASE_URL}/cidades`, headers);
-        return response.data.content;
+        return response.data;
     } catch (error) {
         throw new Error('Erro ao buscar cidades');
     }

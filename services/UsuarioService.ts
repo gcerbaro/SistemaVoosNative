@@ -23,7 +23,7 @@ const BASE_URL = 'http://localhost:8080';
 export const fetchUsuarios = async (): Promise<Usuario[]> => {
     try {
         const response = await axios.get<ApiResponse>(`${BASE_URL}/usuarios`);
-        return response.data.content;
+        return response.data;
     } catch (error) {
         throw new Error('Erro ao buscar usuarios');
     }
