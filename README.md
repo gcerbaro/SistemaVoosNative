@@ -35,7 +35,7 @@
 ### Credits
 
 - Giovanni Assonalio Cerbaro ([@gcerbaro](https://github.com/gcerbaro)) - Developer
-- Nicolas Comin Todero (193521@upf.br) - Developer
+- Nicolas Comin Todero ([@NicolasComin](https://github.com/NicolasComin)) - Developer
 
 ### License
 This project is licensed under the MIT License
